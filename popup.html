@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .content {
+      /* background-color: rgb(29, 161, 242); */
+      padding: 3%;
+    }
+    .content h3 {
+      text-align: center;
+    }
+    /* .card-deck {
+      padding: 50px;
+    } */
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .card-deck > .card {
+      min-width: 300px;
+      border: solid 12px rgb(29, 161, 242);
+      border-radius: 13px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="content">
+    <h3>TwitterMate</h3>
+    <div class="card-deck">
+        <div class="card text-white bg-dark mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Session Data</h5>
+            <hr/>
+            <i>(Data shared across tabs)</i>
+            <p>
+              Followed: 
+              <span id="followed-count"></span>
+            </p>
+            <p>
+                Unfollowed: 
+                <span id="unfollowed-count"></span>
+            </p>
+            <button class="btn btn-sm btn-primary btn-danger" id="fs-reset">Reset</button>
+            </div>
+          </div>
+
+
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Follow Conditions</h5>
+          <hr/>
+
+          <h6 class="card-subtitle mb-2 text-muted"> <i>Follow user if...</i></h6>
+
+          <form name="fs" id="fs-form">
+            <div class="form-group form-check">
+              <input type="checkbox" name="fs-followsMe" class="form-check-input form-data" id="fs-follows-me" />
+              <label for="fs-follows-me" class="form-check-label">User doesn't follow me</label>
+
+            </div>
+            <div class="form-group">
+              <label for="fs-contains-text">Atleast one word or phrase from list is present in user's text</label>
+              <textarea placeholder="e.g. australia &quot;New York&quot; unicorns" name="fs-wordList" id="fs-contains-text" class="form-control form-data" rows="2"></textarea>
+            </div>
+            <!-- <button class="btn btn-secondary" id="fs-cancel">Cancel</button> -->
+            <button class="btn btn-sm btn-primary" id="fs-save">Save</button>
+            <button class="btn btn-sm btn-primary" id="fs-save-follow">Start Following</button>
+            <button class="btn btn-sm btn-primary btn-danger" id="fs-stop">Stop</button>
+
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Unfollow Conditions</h5>
+          <hr/>
+
+          <h6 class="card-subtitle mb-2 text-muted"> <i>Unfollow user if...</i></h6>
+          <form name="ufs" id="ufs-form">
+            <div class="form-group form-check">
+              <input type="checkbox" name="ufs-followsMe" class="form-check-input form-data" id="ufs-follows-me" />
+              <label for="ufs-follows-me" class="form-check-label">User doesn't follow me</label>
+            </div>
+
+            <!-- <div class="form-group">
+              <label for="ufs-contains-text">Users text or handle contains text</label>
+              <textarea name="ufs-wordList" id="ufs-contains-text" class="form-control form-data" rows="2"></textarea>
+            </div> -->
+            <!-- <button class="btn btn-secondary" id="ufs-cancel">Cancel</button> -->
+            <button class="btn btn-sm btn-primary" id="ufs-save">Save</button>
+            <button class="btn btn-sm btn-primary" id="ufs-save-unfollow">Start Unfollowing</button>
+            <button class="btn btn-sm btn-primary btn-danger" id="ufs-stop">Stop</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+<script src="popup.js"></script>
+
+</html>

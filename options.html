@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .content {
+      /* background-color: rgb(29, 161, 242); */
+      padding: 3%;
+    }
+    .content h1 {
+      text-align: center;
+    }
+    .card-deck {
+      padding: 50px;
+    }
+
+    .card-deck > .card {
+      min-width: 300px;
+      border: solid 12px rgb(29, 161, 242);
+      border-radius: 13px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="content">
+    <h3>TwitterMate Settings</h3>
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Follow Settings</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Follow user if...</h6>
+
+          <form name="fs" id="fs-form">
+            <div class="form-group form-check">
+              <input type="checkbox" name="fs-followsMe" class="form-check-input form-data" id="fs-follows-me" />
+              <label for="fs-follows-me" class="form-check-label">User doesn't follow me</label>
+
+            </div>
+            <div class="form-group">
+              <label for="fs-contains-text">Users text or handle contains text</label>
+              <textarea name="fs-wordList" id="fs-contains-text" class="form-control form-data" rows="2"></textarea>
+            </div>
+            <button class="btn btn-secondary" id="fs-cancel">Cancel</button>
+            <button class="btn btn-primary" id="fs-save">Save</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Unfollow Settings</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Unfollow user if...</h6>
+          <form name="ufs" id="ufs-form">
+            <div class="form-group form-check">
+              <input type="checkbox" name="ufs-followsMe" class="form-check-input form-data" id="ufs-follows-me" />
+              <label for="ufs-follows-me" class="form-check-label">User doesn't follow me</label>
+            </div>
+
+            <div class="form-group">
+              <label for="ufs-contains-text">Users text or handle contains text</label>
+              <textarea name="ufs-wordList" id="ufs-contains-text" class="form-control form-data" rows="2"></textarea>
+            </div>
+            <button class="btn btn-secondary" id="ufs-cancel">Cancel</button>
+            <button class="btn btn-primary" id="ufs-save">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+<script src="options.js"></script>
+
+</html>
